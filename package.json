@@ -1,0 +1,53 @@
+{
+  "name": "itr-react-advance",
+  "version": "1.0.0",
+  "description": "Advance topics like: React Life cycle, styling with Material UI, etc ",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itReverie/itR-react-advance.git"
+  },
+  "keywords": [
+    "react",
+    "life",
+    "cycle",
+    "material",
+    "ui",
+    "react",
+    "advance"
+  ],
+  "author": "Brenda Jimenez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itReverie/itR-react-advance/issues"
+  },
+  "homepage": "https://github.com/itReverie/itR-react-advance#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "pm2 start lib/server.js --watch --interpreter babel-node"
+  },
+  "babel": {
+    "presets": [
+      "react",
+      "env",
+      "stage-2"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.9.0",
+    "eslint-plugin-react": "^7.4.0"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "pm2": "^2.7.2"
+  }
+}
