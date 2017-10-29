@@ -1,7 +1,13 @@
 const path = require('path');
 
+//adding the resolve section allow us to tell webpack that if it sees a require, it also need to look in the
+//lib and node_modules folder
 const config = {
-    entry: [ 'babel-polyfill', './lib/components/Index.js'],
+    resolve: {modules: [
+        path.resolve('./lib'),
+        path.resolve('./node_modules'),
+    ]},
+    entry: [ 'babel-polyfill', './lib/renderers/dom.js'],
     output: {
         path: path.resolve(__dirname, 'public'),
         filename: 'bundle.js'
