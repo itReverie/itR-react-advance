@@ -26,44 +26,51 @@
   },
   "homepage": "https://github.com/itReverie/itR-react-advance#readme",
   "scripts": {
+    "update-snapshot":"jest --updateSnapshot",
     "test": "jest --watch",
-    "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node",
-    "webpack": "webpack -wd"
+    "verify-tests": "jest --coverage",
+    "dev": "NODE_PATH=./lib pm2 start lib/server.js --watch --interpreter babel-node --name appDev",
+    "webpack": "webpack -wd",
+    "build-webpack" : "webpack -p",
+    "build-node" : "babel lib -d build --copy-files",
+    "start-prod": "NODE_ENV=production NODE_PATH=./build pm2 start build/server.js -i max --name appProd"
+
   },
   "babel": {
     "presets": [
       "react",
-      "env",
-      "stage-2"
+      ["env", {"targets" : {"node" : "current" }}]
+    ],
+    "plugins" : [
+      "transform-class-properties",
+      "transform-object-rest-spread"
     ]
   },
   "devDependencies": {
-    "babel-eslint": "^8.0.1",
-    "enzyme": "^3.1.0",
-    "enzyme-adapter-react-15": "^1.0.2",
-    "eslint": "^4.10.0",
-    "eslint-plugin-react": "^7.4.0",
-    "jest": "^21.2.1",
-    "react-addons-perf": "^15.4.2",
-    "react-test-renderer": "15.6.1"
+    "babel-eslint": "^7.2.3",
+    "enzyme": "^2.8.2",
+    "eslint": "^4.0.0",
+    "eslint-plugin-react": "^7.1.0",
+    "jest": "^20.0.4",
+    "react-test-renderer": "^15.5.4"
   },
   "dependencies": {
-    "axios": "^0.17.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
+    "axios": "^0.16.2",
+    "babel-cli": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "ejs": "^2.5.7",
-    "express": "^4.16.2",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
     "lodash.debounce": "^4.0.8",
     "lodash.pickby": "^4.6.0",
-    "pm2": "^2.7.2",
-    "prop-types": "^15.6.0",
-    "react": "15.6.1",
-    "react-dom": "^15.6.1",
-    "webpack": "^3.8.1"
+    "pm2": "^2.5.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.0",
+    "react-addons-perf": "^15.4.2",
+    "react-dom": "^15.6.0",
+    "webpack": "^2.6.1"
   }
 }
