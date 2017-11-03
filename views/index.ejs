@@ -16,6 +16,8 @@
 <div id="root"><%- initialMarkup -%></div>
 
 <!-- Nowadays it is a good practice to make reference to just one file so we do not have multiple references -->
-<script src="/bundle.js" charset="UTF-8"></script>
+<!-- todo: Ideally we should automate the regeneration of this file to an incremental version (1,2,3...) according to our deployment -->
+<script src="/vendor.js?version=1" charset="UTF-8"></script>
+<script src="/app.js?version=1" charset="UTF-8"></script>
 </body>
 </html>
